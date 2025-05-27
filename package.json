@@ -8,6 +8,7 @@
     "watch": "tsc --watch",
     "test": "jest",
     "package:yalc": "pnpm run build && cd publish && yalc publish",
+    "package:npm": "pnpm run build && cd publish && npm publish",
     "build": "rm -Rf ./publish || true; mkdir ./publish && run-p build:*",
     "build:readme": "cp ./README.md ./publish/README.md",
     "build:src": "copyfiles -u 1 \"src/**/*\" publish/src",
@@ -27,7 +28,7 @@
     "unicorn-magic": "0.2.0"
   },
   "devDependencies": {
-    "@azerothian/gqlize": "file:.yalc/@azerothian/gqlize",
+    "@azerothian/gqlize": "^6.0.0",
     "@jest/globals": "^29.7.0",
     "@swc/cli": "^0.4.0",
     "@swc/core": "^1.11.24",
@@ -61,7 +62,7 @@
     "uuid": "^10.0.0"
   },
   "peerDependencies": {
-    "@azerothian/gqlize": "^5.4.0",
+    "@azerothian/gqlize": "^6.0.0",
     "@vostro/graphql-types": "^2.0.0",
     "graphql-relay": "^0.10.0",
     "sequelize": "^6.19.0"
