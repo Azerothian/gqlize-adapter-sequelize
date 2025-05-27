@@ -854,7 +854,7 @@ describe("tests", () => {
       name: "ttttttttttttttt",
     });
 
-    const results = await adapter.processIncludeStatement("Task", [], [["createdAt", "DESC"]]);
+    const results = await adapter.processIncludeStatement("Task", [], [["createdAt", "DESC"]], {});
     expect(results.include).toBeDefined();
     expect(results.order).toHaveLength(1);
   });
